@@ -1,0 +1,25 @@
+#######################################
+# Syntax Coloring Map for NTC_Therm
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+NTC_Therm	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+temperature	KEYWORD2
+isConnected	KEYWORD2
+setOffset	KEYWORD2
+setScale	KEYWORD2
+getOffset	KEYWORD2
+getScale	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################

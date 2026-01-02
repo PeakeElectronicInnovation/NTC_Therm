@@ -1,0 +1,42 @@
+{
+  "name": "NTC_Therm",
+  "version": "1.0.0",
+  "description": "Arduino library for reading NTC thermistors in voltage divider configurations",
+  "keywords": "ntc, thermistor, temperature, sensor, arduino",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/NTC_Therm.git"
+  },
+  "authors": [
+    {
+      "name": "Your Name",
+      "email": "your.email@example.com",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/yourusername/NTC_Therm",
+  "dependencies": {},
+  "frameworks": ["arduino"],
+  "platforms": "*",
+  "build": {
+    "flags": []
+  },
+  "examples": [
+    {
+      "name": "BasicLowSide",
+      "base": "examples/BasicLowSide",
+      "files": ["BasicLowSide.ino"]
+    },
+    {
+      "name": "BasicHighSide",
+      "base": "examples/BasicHighSide",
+      "files": ["BasicHighSide.ino"]
+    },
+    {
+      "name": "Calibration",
+      "base": "examples/Calibration",
+      "files": ["Calibration.ino"]
+    }
+  ]
+}
