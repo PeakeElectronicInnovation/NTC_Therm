@@ -39,16 +39,29 @@
 
 class NTC_Therm {
 public:
+    // Main methods
     NTC_Therm(int pin, float R_Ref, float R_NTC_25, float Beta, bool isHighSide, uint16_t adcRes, float adcVoltageRef);
     void begin();
     float temperature();
     bool isConnected();
+
+    // Calibration
     void setOffset(float offsetC);
     void setScale(float scale);
     float getOffset();
     float getScale();
 
+    // Filtering
+    bool enableMovingAverage(uint8_t samples);
+    void disableMovingAverage();
+    bool enableOversampling(uint8_t samples);
+    void disableOversampling();
+
 private:
+    // Methods
+    float movingAverageAddSample(float newSample);
+
+    // Variables
     int _pin;
     float _R_Ref;
     float _R_NTC_25;
@@ -57,6 +70,17 @@ private:
     uint16_t _adcRes;
     uint32_t _adcMax;
     float _adcVoltageRef;
+
     float _offsetC = 0.0;
     float _scale = 1.0;
+
+    uint8_t _oversamplingSamples = 0;
+    bool _oversamplingEnabled = false;
+
+    float* _maBuffer = nullptr;
+    size_t _maSize = 0;
+    size_t _maIndex = 0;
+    size_t _maCount = 0;
+    float _maSum = 0.0f;
+    bool _maEnabled = false;
 };
